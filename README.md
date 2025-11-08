@@ -4,7 +4,7 @@
 
 ![BreathAI Logo](https://via.placeholder.com/200x80/2196f3/ffffff?text=BreathAI)
 
-![在线体验](https://breath-ai-web.vercel.app/)
+在线体验:https://breath-ai-web.vercel.app/
 
 **一个现代化的AI对话助手Web应用，支持多模型对话、文件上传、实时流式响应**
 
