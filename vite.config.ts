@@ -10,6 +10,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: process.env.NODE_ENV === 'production' ? '/BreathAIWeb/' : '/',
   server: {
     port: 3000,
     host: true,
@@ -17,5 +18,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@fluentui/react-components'],
+          markdown: ['react-markdown', 'remark-gfm'],
+        },
+      },
+    },
   },
 })
