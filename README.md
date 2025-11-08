@@ -259,9 +259,9 @@ src/
 
 ## 📞 联系我们
 
-- 项目主页：[https://github.com/your-username/BreathAIWeb](https://github.com/your-username/BreathAIWeb)
-- 问题反馈：[Issues](https://github.com/your-username/BreathAIWeb/issues)
-- 功能建议：[Discussions](https://github.com/your-username/BreathAIWeb/discussions)
+- 项目主页：[https://github.com/lenmei233/BreathAIWeb](https://github.com/lenmei233/BreathAIWeb)
+- 问题反馈：[Issues](https://github.com/lenmei233/BreathAIWeb/issues)
+- 功能建议：[Discussions](https://github.com/lenmei233/BreathAIWeb/discussions)
 
 ---
 
