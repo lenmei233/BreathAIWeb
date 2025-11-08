@@ -1,0 +1,51 @@
+{
+  "name": "breathai-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "现代化人工智能对话平台，基于Fluent Design System设计语言",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.54.0",
+    "@fluentui/react-icons": "^2.0.244",
+    "@fluentui/react-theme": "^9.2.0",
+    "@fluentui/theme": "^2.6.21",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.16.16",
+    "katex": "^0.16.25",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hotkeys-hook": "^4.4.4",
+    "react-katex": "^3.1.0",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.20.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@types/prismjs": "^1.26.3",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-syntax-highlighter": "^15.5.11",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}

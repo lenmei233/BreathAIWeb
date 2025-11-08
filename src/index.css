@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fluent Design System 基础样式 */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--colorNeutralBackground);
+    color: var(--colorNeutralForeground1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--colorNeutralBackground);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--colorNeutralStroke1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--colorNeutralStroke2);
+  }
+}
+
+@layer components {
+  /* Fluent 按钮样式 */
+  .fluent-button {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-all duration-200;
+    @apply bg-fluent-primary text-white hover:bg-fluent-primary-hover;
+    @apply focus:outline-none focus:ring-2 focus:ring-fluent-primary focus:ring-offset-2;
+  }
+  
+  .fluent-button-secondary {
+    @apply bg-fluent-surface text-fluent-text border border-fluent-border;
+    @apply hover:bg-fluent-border focus:ring-fluent-secondary;
+  }
+  
+  .fluent-button-ghost {
+    @apply bg-transparent text-fluent-text hover:bg-fluent-surface;
+    @apply focus:ring-fluent-primary;
+  }
+  
+  /* Fluent 卡片样式 */
+  .fluent-card {
+    @apply bg-fluent-surface border border-fluent-border rounded-lg;
+    @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .fluent-card-dark {
+    @apply bg-fluent-dark-surface border-fluent-dark-border text-fluent-dark-text;
+  }
+  
+  /* Fluent 输入框样式 */
+  .fluent-input {
+    @apply w-full px-3 py-2 border border-fluent-border rounded-md;
+    @apply bg-fluent-background text-fluent-text;
+    @apply focus:outline-none focus:ring-2 focus:ring-fluent-primary focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+  
+  .fluent-input-dark {
+    @apply bg-fluent-dark-surface border-fluent-dark-border text-fluent-dark-text;
+    @apply focus:ring-fluent-dark-primary;
+  }
+  
+  /* Fluent 对话消息样式 */
+  .message-bubble {
+    @apply max-w-3xl px-4 py-3 rounded-2xl;
+    @apply transition-all duration-200 animate-fade-in;
+  }
+  
+  .message-user {
+    @apply bg-fluent-primary text-white ml-auto;
+  }
+  
+  .message-assistant {
+    @apply bg-fluent-surface border border-fluent-border text-fluent-text;
+  }
+  
+  .message-assistant-dark {
+    @apply bg-fluent-dark-surface border-fluent-dark-border text-fluent-dark-text;
+  }
+}
+
+@layer utilities {
+  /* Fluent 阴影 */
+  .shadow-fluent {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-fluent-lg {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Fluent 动画 */
+  .animate-fluent-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  .animate-fluent-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  /* 响应式文本大小 */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+}

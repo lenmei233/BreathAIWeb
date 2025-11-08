@@ -1,0 +1,361 @@
+/* 全局样式和Fluent Design System变量 */
+
+/* CSS 自定义属性 */
+:root {
+  /* Fluent Design System 颜色变量 */
+  --fluent-primary: #0078d4;
+  --fluent-primary-hover: #106ebe;
+  --fluent-secondary: #6c757d;
+  --fluent-background: #ffffff;
+  --fluent-surface: #f3f2f1;
+  --fluent-border: #edebe9;
+  --fluent-text: #323130;
+  --fluent-text-secondary: #605e5c;
+  --fluent-accent: #0078d4;
+  --fluent-success: #107c10;
+  --fluent-warning: #ff8c00;
+  --fluent-error: #d13438;
+  
+  /* Fluent Design System 尺寸变量 */
+  --fluent-border-radius: 6px;
+  --fluent-border-radius-lg: 8px;
+  --fluent-spacing-xs: 4px;
+  --fluent-spacing-sm: 8px;
+  --fluent-spacing-md: 16px;
+  --fluent-spacing-lg: 24px;
+  --fluent-spacing-xl: 32px;
+  
+  /* Fluent Design System 阴影 */
+  --fluent-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --fluent-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --fluent-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --fluent-shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.15);
+  
+  /* Fluent Design System 动画 */
+  --fluent-transition-fast: 0.1s ease;
+  --fluent-transition-normal: 0.2s ease;
+  --fluent-transition-slow: 0.3s ease;
+}
+
+/* 深色主题变量 */
+.dark {
+  --fluent-primary: #4080ff;
+  --fluent-primary-hover: #2b6ce0;
+  --fluent-secondary: #a19f9d;
+  --fluent-background: #080808;
+  --fluent-surface: #1a1a1a;
+  --fluent-border: #323130;
+  --fluent-text: #ffffff;
+  --fluent-text-secondary: #a19f9d;
+  --fluent-accent: #4080ff;
+}
+
+/* 全局重置和基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: var(--fluent-text);
+  background-color: var(--fluent-background);
+  transition: background-color var(--fluent-transition-normal), 
+              color var(--fluent-transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: var(--fluent-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--fluent-primary);
+  color: white;
+}
+
+/* 焦点样式 */
+:focus-visible {
+  outline: 2px solid var(--fluent-primary);
+  outline-offset: 2px;
+}
+
+/* 链接样式 */
+a {
+  color: var(--fluent-primary);
+  text-decoration: none;
+  transition: color var(--fluent-transition-fast);
+}
+
+a:hover {
+  color: var(--fluent-primary-hover);
+}
+
+/* 代码块样式 */
+code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background-color: var(--fluent-surface);
+  padding: 2px 6px;
+  border-radius: var(--fluent-border-radius);
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--fluent-surface);
+  border: 1px solid var(--fluent-border);
+  border-radius: var(--fluent-border-radius-lg);
+  padding: var(--fluent-spacing-md);
+  overflow-x: auto;
+  font-size: 0.9em;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--fluent-spacing-md) 0;
+}
+
+th, td {
+  padding: var(--fluent-spacing-sm) var(--fluent-spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--fluent-border);
+}
+
+th {
+  font-weight: 600;
+  background-color: var(--fluent-surface);
+}
+
+/* 分割线样式 */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--fluent-border);
+  margin: var(--fluent-spacing-lg) 0;
+}
+
+/* 图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--fluent-border-radius-lg);
+}
+
+/* 加载动画 */
+@keyframes fluent-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fluent-spinner {
+  animation: fluent-spin 1s linear infinite;
+}
+
+/* 脉冲动画 */
+@keyframes fluent-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fluent-pulse {
+  animation: fluent-pulse 2s ease-in-out infinite;
+}
+
+/* 响应式工具类 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .fluent-button {
+    border: 1px solid #000;
+  }
+}
+
+/* KaTeX 数学公式样式 */
+.katex {
+  font-size: 1em;
+}
+
+.katex-display {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.katex-inline {
+  display: inline;
+}
+
+/* 增强的代码块样式 */
+.enhanced-code-block {
+  position: relative;
+  margin: 1em 0;
+  border-radius: var(--fluent-border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--fluent-shadow);
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--fluent-border-radius);
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--fluent-transition-fast);
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.copy-button.copied {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+/* 深色主题下的代码块样式 */
+.dark .enhanced-code-block {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark .code-header {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+/* Markdown 内容样式增强 */
+.prose {
+  color: var(--fluent-text);
+  max-width: none;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--fluent-text);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.prose p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.prose li {
+  margin: 0.5em 0;
+}
+
+.prose blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--fluent-primary);
+  background: var(--fluent-surface);
+  font-style: italic;
+}
+
+.prose a {
+  color: var(--fluent-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--fluent-primary-hover);
+  text-decoration-thickness: 2px;
+}
+
+.prose table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--fluent-border);
+}
+
+.prose th {
+  background: var(--fluent-surface);
+  font-weight: 600;
+}
+
+.prose tr:hover {
+  background: var(--fluent-surface);
+}
